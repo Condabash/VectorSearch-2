@@ -1,8 +1,8 @@
 # Query Data #
 
 # Import Packages
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.vectorstores import MongoDBAtlasVectorSearch
+from langchain_openai import OpenAIEmbeddings
+from langchain_community.vectorstores import MongoDBAtlasVectorSearch
 from langchain.llms import OpenAI
 from langchain.chains import RetrievalQA
 from mongo import collection
@@ -15,7 +15,7 @@ model = "gpt-4o-mini"
 openai_api_key = e.openai_api_key  # OpenAI API Key
 
 # Embeddings
-embeddings = OpenAIEmbeddings(api_key=openai_api_key)
+embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
 
 # Vector Store
 vectorStore = MongoDBAtlasVectorSearch(collection, embeddings)
