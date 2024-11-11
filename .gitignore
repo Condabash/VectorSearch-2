@@ -8,3 +8,6 @@
 
 # Python Cache
 __pycache__
+
+# Gradio App Certificate
+.gradio
