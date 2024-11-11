@@ -2,7 +2,7 @@
 
 # Import Packages
 from langchain_openai import OpenAIEmbeddings
-from langchain_mongodb import MongoDBAtlasVectorSearch
+from langchain_community.vectorstores import MongoDBAtlasVectorSearch
 from langchain_community.llms import OpenAI
 from langchain.chains import RetrievalQA
 from mongo import collection
@@ -30,16 +30,16 @@ def query_data(query):
     data = docs[0].page_content
 
     # OpenAI LLM Instance
-    llm = OpenAI(api_key=openai_api_key, model=model, temperature=0)
+    llm = OpenAI(api_key=openai_api_key, temperature=0)
 
     # Retriever Instance
     retriever = vectorStore.as_retriever()
 
     # QA Chain Instance
-    qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=retriever)
+    qa = RetrievalQA.from_chain_type(llm, chain_type="stuff", retriever=retriever)
 
     # LLM Answer
-    answer = ga.run(query)
+    answer = qa.run(query)
 
     # Return Data and Answer
     return data, answer
