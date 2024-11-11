@@ -3,28 +3,30 @@
 # Note: Run This Python Script Only Once
 
 # Import Packages
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.vectorstores import MongoDBAtlasVectorSearch
-from langchain.document_loaders import DirectoryLoader
+from langchain_openai import OpenAIEmbeddings
+from langchain_community.vectorstores import MongoDBAtlasVectorSearch
+from langchain_community.document_loaders import DirectoryLoader
 from mongo import collection
+import nltk
 import env as e
+
+# Download NLTK Data
+nltk.download("punkt")  # Sentence Tokenizer
+nltk.download("punkt_tab")  # Word Tokenizer
 
 # Get Env Variables
 openai_api_key = e.openai_api_key  # OpenAI API Key
 
-# Loader Params
-path = "./data"
-glob = "./*.txt"
-progress = True
-
 # Directory Loader
-loader = DirectoryLoader(path=path, glob=glob, show_progress=progress)
+loader = DirectoryLoader(path="./data", glob="./*.txt", show_progress=True)
 
 # Load Data
 data = loader.load()
 
-# Generate Embeddings
-embeddings = OpenAIEmbeddings(api_key=openai_api_key)
+# Embeddings
+embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
 
 # Vector Store
-vectorStore = MongoDBAtlasVectorSearch.from_documents(data, embeddings, collection)
+vectorStore = MongoDBAtlasVectorSearch.from_documents(
+    data, embeddings, collection=collection
+)
