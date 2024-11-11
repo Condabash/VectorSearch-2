@@ -1,0 +1,19 @@
+# Chat #
+What microservice is Suraj building?
+What is Suraj's main database requirement?
+Which database has strong write consistency?
+Which database is known for scalability?
+Which database handles high writes but lacks traditional ACID compliance?
+
+# Error #
+What error occurred while retrieving the warehouse operations report?
+What constraint violation caused the failure in updating inventory for pickup items?
+What was the issue in updating Arn items in inventory?
+What error was encountered when getting the posted shipment report?
+
+# Leanafy #
+When and where was Leanafy founded?
+What is the primary purpose of Lean WMS?
+Which industries does Leanafy serve?
+What feature of Leanafy's platform helps with real-time shipment tracking?
+What core values does Leanafy emphasize in its operations?
