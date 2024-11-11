@@ -4,6 +4,7 @@ What is Suraj's main database requirement?
 Which database has strong write consistency?
 Which database is known for scalability?
 Which database handles high writes but lacks traditional ACID compliance?
+What is karan's view?
 
 # Error #
 What error occurred while retrieving the warehouse operations report?
