@@ -1,0 +1,11 @@
+1.
+Failed to get warehouse operations report: rpc error: code = Unavailable desc = unexpected HTTP status code received from server: 502 (Bad Gateway); transport: received unexpected content-type "text/html"
+
+2.
+"Failed to update inventory for pickup item: rpc error: code = Unknown desc = unable to update inventory: ERROR: new row for relation \"inventory\" violates check constraint \"inv_available_lte_total\" (SQLSTATE 23514)"
+
+3. 
+"Failed to update Arn items in inventory: rpc error: code = Unknown desc = sku didn't get updated on the location"
+
+4. 
+Failed to get posted shipment report: rpc error: code = ResourceExhausted desc = grpc: received message larger than max (5068514 vs. 4194304)
