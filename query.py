@@ -2,8 +2,8 @@
 
 # Import Packages
 from langchain_openai import OpenAIEmbeddings
-from langchain_community.vectorstores import MongoDBAtlasVectorSearch
-from langchain.llms import OpenAI
+from langchain_mongodb import MongoDBAtlasVectorSearch
+from langchain_community.llms import OpenAI
 from langchain.chains import RetrievalQA
 from mongo import collection
 import env as e
