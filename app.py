@@ -31,4 +31,4 @@ with gr.Blocks(theme=Base(), title="QnA App") as demo:
     button.click(query_data, textbox, outputs=[output1, output2])
 
 # Launch The App
-demo.launch()
+demo.launch(share=True)  # For Public Link Make share=True
