@@ -1,5 +1,7 @@
 # Load Data #
 
+# Note: Run This Python Script Only Once
+
 # Import Packages
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import MongoDBAtlasVectorSearch
